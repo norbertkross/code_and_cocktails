@@ -36,7 +36,6 @@ class VerifyingTicketSingleton {
     print("ID: ${ticketID.split("/").last}");
     ticketID = ticketID.split("/").last;
     Response response = await dio.get(
-        // 'https://be-cnc-production.up.railway.app/api/ticket/check-in/$ticketID'
        Urls.VerifyMyTicket + '$ticketID'
         );
     print(response.realUri);
@@ -61,7 +60,6 @@ class VerifyingTicketSingleton {
 
   Future<List<TicketSuccessResponse>?> getAllTickets() async {
     Response response = await dio.get(
-        // 'https://be-cnc-production.up.railway.app/api/ticket/check-in/$ticketID'
          Urls.GetAllTickets);
     print(response.realUri);
     print(response.data.toString());
